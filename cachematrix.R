@@ -8,6 +8,9 @@
 makeCacheMatrix <- function(x = matrix()) {
     inv <- NULL
     set <- function(y) {
+        # This function sets the matrix to a new value and resets the cached inverse.
+        # '<<-' assigns the value in the parent environment so the matrix and its inverse
+        # are updated outside the local function scope.
         x <<- y
         inv <<- NULL
     }
